@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QnA Bot</title>
     <link href="Styles.css" rel="stylesheet" />
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    
 </head>
 <body>
     <header class="header">
@@ -18,7 +20,39 @@
             </div>
         </div>
         <div class="column how-to-iframe">
-            <iframe src='https://webchat.botframework.com/embed/SampleQnAMSBot1?s=' style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+            <div class="chatHeader">Chat</div>
+            <!--<iframe src='https://webchat.botframework.com/embed/SampleQnAMSBot1?s=' style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>-->
+            <div style="min-width: 400px; width: 100%; min-height: 470px; height: 470px; border:solid 1px #f3f0f0" id="webchat" role="main"></div>       
+            <script>
+                // Set  the CSS rules.
+                const styleSet = window.WebChat.createStyleSet({
+                    bubbleBackground: 'rgba(0, 0, 255, .1)',
+                    bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+                    rootHeight: '100%',
+                    rootWidth: '100%',
+                    backgroundColor: 'Snow',
+                    paddingRegular: 10,
+                    paddingWide: 20,
+                    fontSizeSmall: '60%',
+                    botAvatarBackgroundColor: 'White',
+                    userAvatarBackgroundColor: 'White',
+                });
+                // Set the avatar options.
+                const avatarOptions = {
+                    botAvatarImage: 'robotA.png',
+                    botAvatarInitials: '',
+                    userAvatarImage: 'man.png',
+                    userAvatarInitials: ''
+                };
+
+                window.WebChat.renderWebChat({
+                    directLine: window.WebChat.createDirectLine({
+                        token: ''
+                    }),
+                    styleSet,
+                    styleOptions: avatarOptions
+                }, document.getElementById('webchat'));
+            </script>
         </div>
     </div>
 </body>

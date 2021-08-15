@@ -342,3 +342,12 @@ a {
 }
 
 
+.chatHeader {
+    height: 30px;
+    width: 99%;
+    border: solid 1px #f3f0f0;
+    background-color: blueviolet;
+    padding: 2px 1px 0 1%;
+    color: white;
+    font-weight: bold;
+}
